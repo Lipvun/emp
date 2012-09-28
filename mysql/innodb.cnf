@@ -1,0 +1,3 @@
+﻿[mysqld]
+default_storage_engine=MyISAM
+ignore_builtin_innodb
