@@ -1,7 +1,8 @@
 #!/bin/bash
 #本文件可修改后使用
 
-source ./function/*.inc
+source ./function/commen.inc
+source ./function/remove.inc
 
 #dropbear安装端口为参数
 function install_dropbear {
