@@ -8,6 +8,6 @@ service ssh
 	server       = /usr/sbin/dropbear
 	server_args  = -i
 	disable      = no
-	port         = 22
+	port         = SSH_PORT
 	type         = unlisted
 }
