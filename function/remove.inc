@@ -1,4 +1,4 @@
-##function for remove unneeded package
+#function for remove unneeded package
 function remove_unneeded {
 	# Some Debian have portmap installed. We don't need that.
 	check_remove /sbin/portmap portmap
