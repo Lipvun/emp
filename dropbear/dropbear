@@ -1,4 +1,4 @@
-﻿service ssh
+service ssh
 {
 	socket_type  = stream
 	only_from    = 0.0.0.0
