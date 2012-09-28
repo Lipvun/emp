@@ -217,7 +217,7 @@ function install_nginx {
 #新设站点wordpress或drupal
 function install_site {
 
-	if [ -z "$1" && -z "$2" ]
+	if [ -z "$1" ] && [ -z "$2" ]
 	then
 		die "Usage: `basename $0` site [domain] [wordpress or drupal]"
 	fi
@@ -230,7 +230,7 @@ function install_site {
 	echo "Hello World" > /var/www/$1/public/index.html
 
 	# Setting up Nginx mapping
-	cp ./site/WOD.conf /etc/nginx/host.d/$1.conf
+	cp ./site/WOD.conf /etc/nginx/hosts.d/$1.conf
 	sed -i "s/DOMAIN/$1/" /etc/nginx/hosts.d/$1.conf
 	sed -i "s/WOD/$2/" /etc/nginx/hosts.d/$1.conf
 
