@@ -18,6 +18,7 @@ function install_dropbear {
 	invoke-rc.d ssh stop
 	# 把droopbear加入xinetd,xinetd还可用于其它
 	mv ./dropbear/dropbear /etc/xinetd.d
+	sed -i "s/SSH_PORT/$1/" /etc/xinetd.d/dropbear
 	invoke-rc.d xinetd restart
 }
 #exim4安装，并开启internet配置
