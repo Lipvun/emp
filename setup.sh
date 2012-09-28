@@ -183,13 +183,13 @@ function install_nginx {
 	mkdir -p /var/www
 	mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 	#删除原vhost
-	rm /etc/nginx/conf.d/*
+	rm -r /etc/nginx/conf.d/*
 	#复制新的配置文件
-	cp ./nginx/* /etc/nginx/
+	cp -r ./nginx/* /etc/nginx/
 		
-    PR=$( awk '/cpu MHz/ {cores++} END {print cores+1}' /proc/cpuinfo )
-    sed -i "s/worker_processes [0-9]*/worker_processes $PR/" /etc/nginx/nginx.conf
-    sed -i 's/worker_connections [0-9]*/worker_connections 1024/' /etc/nginx/nginx.conf
+    	PR=$( awk '/cpu MHz/ {cores++} END {print cores+1}' /proc/cpuinfo )
+    	sed -i "s/worker_processes [0-9]*/worker_processes $PR/" /etc/nginx/nginx.conf
+    	sed -i 's/worker_connections [0-9]*/worker_connections 1024/' /etc/nginx/nginx.conf
 	
 	#gzip on,mime.types to mime.conf,nginx.d
 	mv /etc/nginx/mime.types /etc/nginx/nginx.d/mime.conf
@@ -206,7 +206,7 @@ function install_nginx {
 	mkdir /var/www/default
 	mkdir /var/www/default/public
 	echo 'Hello World!' >> /var/www/default/public/index.html
-	cp ./p.php /var/www/default/public/
+	cp ./tz.php /var/www/default/public/p.php
 	
 	echo "探针http://ip/p.php"
 
