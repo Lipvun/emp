@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 #本文件可修改后使用
 
 source ./function/*.inc
