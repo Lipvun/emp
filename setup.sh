@@ -111,7 +111,7 @@ function install_mysql {
 	invoke-rc.d mysql stop
 	#
 	#lowendmemory.cnf和innodb.cnf
-	mv ./mysql/* /etc/mysql/conf.d/	
+	cp ./mysql/* /etc/mysql/conf.d/	
 	invoke-rc.d mysql start
 
 	# Generating a new password for the root user.
