@@ -37,7 +37,7 @@ function apt_dotdeb {
 
 	# Need to add Dotdeb repo for installing PHP5-FPM when using Debian 6.0 (squeeze)
 	cat >> /etc/apt/sources.list <<EOF
-# Dotdeb
+#Dotdeb
 deb http://packages.dotdeb.org stable all
 deb-src http://packages.dotdeb.org stable all
 	
@@ -283,10 +283,10 @@ END
 	echo 'MySQL Database: ' $dbname
 }
 
-＃防火墙 开启ssh端口,防ssh攻击
+#防火墙 开启ssh端口,防ssh攻击
 function install_iptables {
 
-	check_install iptables
+	check_install iptables iptables
 
 	if [ -z "$1" ]
 	then
