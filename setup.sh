@@ -40,8 +40,8 @@ function apt_dotdeb {
 	# Need to add Dotdeb repo for installing PHP5-FPM when using Debian 6.0 (squeeze)
 	cat >> /etc/apt/sources.list <<EOF
 #Dotdeb
-deb http://packages.dotdeb.org stable all
-deb-src http://packages.dotdeb.org stable all
+deb http://packages.dotdeb.org squeeze all
+deb-src http://packages.dotdeb.org squeeze all
 	
 EOF
 	wget -q -O - http://www.dotdeb.org/dotdeb.gpg | apt-key add -
