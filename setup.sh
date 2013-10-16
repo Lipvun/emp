@@ -135,13 +135,15 @@ function install_php {
 
 	echo 'Using PHP-FPM to manage PHP processes'
 	echo ' '
-
+if [ -f /etc/php5/conf.d/apc.ini ]
+then
 	mv /etc/php5/conf.d/apc.ini /etc/php5/conf.d/orig.apc.ini
-
+fi
 	mv ./php/apc.ini /etc/php5/conf.d/
-
+if [ -f /etc/php5/conf.d/suhosin.ini ]
+then
 	mv /etc/php5/conf.d/suhosin.ini /etc/php5/conf.d/orig.suhosin.ini
-
+fi
 	mv ./php/suhosin.ini /etc/php5/conf.d/
 
 	if [ -f /etc/php5/fpm/php.ini ]
